@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 4%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 4%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 4%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 30 100% 56%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 64%;
+  --accent: 181 100% 41%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 15%;
+  --input: 0 0% 15%;
+  --ring: 30 100% 56%;
+  --radius: 0.5rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'cv11', 'ss01';
+  font-variation-settings: 'opsz' 32;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Grid pattern */
+.bg-grid-pattern {
+  background-image: radial-gradient(circle, rgb(255 255 255 / 2%) 1px, transparent 1px);
+}
+
+/* Smooth animations */
+.animate-in {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+
+.slide-in-from-top {
+  animation-name: slide-in-from-top;
+}
+
+@keyframes slide-in-from-top {
+  from {
+    opacity: 0%;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+/* Focus styles */
+.focus-ring-primary:focus {
+  --tw-ring-color: hsl(var(--primary));
+}
+
+.focus-border-primary:focus {
+  --tw-border-opacity: 1;
+
+  border-color: hsl(var(--primary));
+}
+
+/* Button hover effects */
+.hover-scale-105:hover {
+  transform: scale(1.05);
+}
+
+/* Gradient text */
+.bg-clip-text {
+  background-clip: text;
+}
+
+/* Custom utilities */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Loading states */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 100%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Card hover effects */
+.group:hover .group-hover-scale-110 {
+  transform: scale(1.1);
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  font-feature-settings: 'cv11', 'ss01';
+  font-variation-settings: 'opsz' 32;
+  text-rendering: optimizelegibility;
+}
+
+/* Better line heights for readability */
+.leading-relaxed {
+  line-height: 1.625;
+}
+
+/* Improved focus visibility */
+*:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, input, textarea {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Better spacing for form elements */
+input, textarea {
+  line-height: 1.5;
+}
+
+/* Improved contrast for better accessibility */
+.text-gray-600 {
+  color: hsl(220deg 13% 45%);
+}
+
+.text-gray-700 {
+  color: hsl(220deg 13% 35%);
+}
+
+.text-gray-300 {
+  color: hsl(220deg 13% 85%);
+}
+
+.text-gray-400 {
+  color: hsl(220deg 13% 65%);
+}
